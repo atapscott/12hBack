@@ -12,7 +12,7 @@ def create_user(*args):
     data = {'username': username, 'password': password}
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
-    r = requests.post(url="{}{}".format(API_ENDPOINT, "/api/users"), data=json.dumps(data), headers=headers)
+    r = requests.post(url="{}{}".format(API_ENDPOINT, "/api/user"), data=json.dumps(data), headers=headers)
 
     return r
 
