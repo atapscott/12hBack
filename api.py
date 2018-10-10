@@ -10,14 +10,12 @@ https://github.com/miguelgrinberg/REST-auth
 
 import os
 import json
-from flask import Flask, abort, request, jsonify, g, url_for
+from flask import Flask, abort, request, jsonify, g
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import exists, and_
 from flask_httpauth import HTTPBasicAuth
 from passlib.apps import custom_app_context as pwd_context
 from itsdangerous import (TimedJSONWebSignatureSerializer
                           as Serializer, BadSignature, SignatureExpired)
-from uuid import uuid4
 
 # initialization
 app = Flask(__name__)
@@ -107,8 +105,7 @@ def create_user(username, password):
     db.session.commit()
     return user
 
-
-@app.route('/api/users', methods=['POST'])
+@app.route('/api/user', methods=['POST'])
 def new_user():
     username = request.json.get('username')
     password = request.json.get('password')
