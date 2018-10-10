@@ -1,3 +1,7 @@
 {
-  "keys": ["k1", "k2"]
+  "system_keys": ["initial_k1", "initial_k2", "initial_k3", "K4"],
+
+  "admins": [["snroot", "rootsn"]],
+
+  "initial_key_values": [["initial_k1", "k1_initial_value"], ["initial_k2", "k2_initial_value"], ["initial_k3", "k3_initial_value"]]
 }
